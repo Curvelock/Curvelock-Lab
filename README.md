@@ -2,7 +2,7 @@
 
 **Localized Standing Waves in Prescribed Curvature Wells**
 
-This repository provides the frozen numerical solver and a compact verification record for Paper 1 of the Curvelock Research Program (Danai Leangtragul, independent researcher).
+This repository provides the frozen numerical solver, a compact verification record, and the seven-figure reproduction package for Paper 1 of the Curvelock Research Program (Danai Leangtragul, independent researcher).
 
 The study asks whether a prescribed inward-curvature well can support localized standing-wave modes and whether an initially orthogonalized incoming wave packet can populate those modes through nonlinear evolution. The prescribed well is a model input, not a self-consistent solution of gravitational field equations. The results do not establish matter formation, particle masses, or a mechanism of quantum chromodynamics.
 
@@ -15,8 +15,10 @@ The study asks whether a prescribed inward-curvature well can support localized 
 | [LICENSE](LICENSE) | MIT license |
 | [verification/R9V_summary.md](verification/R9V_summary.md) | Verification findings, acceptance gates and limitations |
 | [verification/R9V_results.csv](verification/R9V_results.csv) | Extracted run-level numerical results, including reused reference rows |
+| [figure_scripts/](figure_scripts/) | Integrated Python generators for Paper 1 Figures 1–7 |
+| [data/](data/) | Original publication figure-source inputs; separate from R9-V |
 
-The manuscript and full raw simulation archive are maintained separately. This repository is the minimal code and verification reference, not a complete archive of every analysis script or figure-generation workflow.
+The manuscript and full raw simulation archive are maintained separately. The `data/` directory contains the original publication inputs needed for Figures 1–7 and the matched null metadata, not the entire simulation archive. The original numerical solver and the immutable `v0.3.0-r9v` release are unchanged.
 
 ## Installation
 
@@ -34,6 +36,24 @@ python curvature_well_capture_v0.3.py --help
 ```
 
 The archived environments were Linux (Python 3.12.3, NumPy 2.4.4, SciPy 1.17.1) and Windows (Python 3.14.6, NumPy 2.5.0, SciPy 1.18.0). These are recorded versions, not minimum supported versions. Dependencies are unpinned to permit compatible installations; use the archived versions when matching the numerical environment closely. Last-digit differences across platforms are possible.
+
+## Reproduce the manuscript figures
+
+From the repository root, after installing the requirements:
+
+```bash
+python figure_scripts/generate_all_figures.py --data data --out figures_output
+```
+
+This command uses the archived July 2026 original publication data directly. It generates seven PDF and seven PNG files with the manuscript's figure names, plus `figures_manifest.json` containing the input paths and SHA-256 hashes. No simulation is rerun. The default paths are relative to the repository root, so the driver also works from other working directories. To generate one figure, for example:
+
+```bash
+python figure_scripts/figure7_scan.py --data data --out figures_output
+```
+
+Figures 1, 2, 6 and 7 retain the v1.2 plotting layouts; Figures 3–5 use the original plotting logic with reconstructed common I/O and style helpers. Minor layout/readability adjustments may differ from the manuscript's archived PDFs; byte-identical PDFs are not claimed. No scientific values were changed. Figure 2 expects 61 eigenvalue rows and 19 mode-count rows; Figure 6 expects 800 baseline time-series data rows (801 lines including the header); Figure 7 expects the original six robustness rows plus the duplicated baseline. Missing source files fail explicitly (the driver exits nonzero), rather than generating substitutes. The `--synthetic` option only adds a watermark and does not create synthetic data.
+
+**Do not substitute R9-V data for these figure inputs.** The figures show the original Linux publication baseline (net capture approximately 0.235723%). R9-V is a separate verification campaign with slightly different numerical results. See [data/README.md](data/README.md) for provenance and figure-to-file mapping.
 
 ## Verify solver integrity
 

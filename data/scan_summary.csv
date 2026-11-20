@@ -1,0 +1,8 @@
+run_id,profile,W0,a,net_f_cap,status,seed_clean,numerics_valid,radiation_cleared,budget_closed,in_robustness_set,f_min,rtol,net_f_cap_median_supported,rel_spread_supported,h2_ensemble_status,ensemble_note
+baseline,square,0.9,5,0.00235722503825,REJECTED,True,True,True,True,False,0.02,0.3,None,None,H2_REJECTED,subset adjudicable; contains REJECTED run(s)
+rob_sech2_W0p85,sech2,0.85,5,0.00198540838949,REJECTED,True,True,True,True,True,0.02,0.3,None,None,H2_REJECTED,subset adjudicable; contains REJECTED run(s)
+rob_sech2_W0p9,sech2,0.9,5,0.00218442079564,REJECTED,True,True,True,True,True,0.02,0.3,None,None,H2_REJECTED,subset adjudicable; contains REJECTED run(s)
+rob_square_W0p85,square,0.85,5,0.00225134474752,REJECTED,True,True,True,True,True,0.02,0.3,None,None,H2_REJECTED,subset adjudicable; contains REJECTED run(s)
+rob_square_W0p9,square,0.9,5,0.00235722503825,REJECTED,True,True,True,True,True,0.02,0.3,None,None,H2_REJECTED,subset adjudicable; contains REJECTED run(s)
+rob_tanh_W0p85,tanh,0.85,5,0.00237733729531,REJECTED,True,True,True,True,True,0.02,0.3,None,None,H2_REJECTED,subset adjudicable; contains REJECTED run(s)
+rob_tanh_W0p9,tanh,0.9,5,0.00249055033011,REJECTED,True,True,True,True,True,0.02,0.3,None,None,H2_REJECTED,subset adjudicable; contains REJECTED run(s)

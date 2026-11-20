@@ -1,0 +1,134 @@
+{
+  "run_id": "baseline",
+  "code_version": "0.3.0",
+  "created_at": "2026-07-23T04:45:02.073391+00:00",
+  "m0": 1.0,
+  "in_robustness_set": false,
+  "is_control": false,
+  "profile": "square",
+  "W0": 0.9,
+  "a": 5.0,
+  "Delta": 0.5,
+  "lambda_chi": 1.0,
+  "is_linear_null": false,
+  "packet": {
+    "kind": "chi_carrier",
+    "amplitude": 0.2,
+    "r0": 55.0,
+    "sigma": 2.0,
+    "orthogonalized": true,
+    "k0": 3.5,
+    "omega0": 3.640054944640259,
+    "v_group": 0.9615239476408232,
+    "k0_sigma": 7.0,
+    "points_per_wavelength": 35.90391604102621
+  },
+  "grid": {
+    "r_max": 100.0,
+    "dr": 0.05,
+    "cfl": 0.2,
+    "t_end": 400.0
+  },
+  "sponge": {
+    "start_frac": 0.75,
+    "strength": 3.0
+  },
+  "gates": {
+    "eps_lin": 0.002,
+    "f_min": 0.02,
+    "eps_res": 0.01,
+    "eps_budget": 0.01,
+    "rtol": 0.3
+  },
+  "modes": [
+    {
+      "n": 1,
+      "omega2": 0.36404291922627335,
+      "kappa": 0.7974691723030595,
+      "box_affected": false,
+      "n_nodes": 0
+    },
+    {
+      "n": 2,
+      "omega2": 0.9992358479771648,
+      "kappa": 0.027643299781957942,
+      "box_affected": true,
+      "n_nodes": 1
+    }
+  ],
+  "outcomes": {
+    "f_cap_init": 2.987625061019203e-37,
+    "f_cap_final": 0.002357225038249329,
+    "net_f_cap": 0.002357225038249329,
+    "f_esc_final": 0.9972126643386987,
+    "f_res_final": 0.0004157131189168451,
+    "closure_abs": 0.00043011062305198244,
+    "cons_err_max": 0.0005392042279917448,
+    "radiation_cleared": true,
+    "budget_closed": true,
+    "t_clear": 178.7234042553191,
+    "analysis_window": [
+      375.46933667083846,
+      400.00000000000045
+    ],
+    "halted": false,
+    "halt_reason": "",
+    "window_mode_statistics": {
+      "n_real_modes": 2,
+      "dominant_mode_final_window": "mode_1",
+      "mode_fractions_final_window_median": {
+        "mode_1": 0.00229886577450191,
+        "mode_2": 5.925474496432235e-05
+      },
+      "mode_fraction_of_captured_final_window": {
+        "mode_1": 0.9752423876378126,
+        "mode_2": 0.02513750023982854
+      },
+      "mode_fraction_std_over_mean_final_window": {
+        "mode_1": 0.15625745535215899,
+        "mode_2": 0.21412882568635827
+      },
+      "denominator_note": "E_in recovered from f_cap identity (E_in = sum E_mode / f_cap); consistent with the evolution denominator |E_box(0)|"
+    },
+    "seed_clean": true,
+    "numerics_valid": true,
+    "null_floor_max": 1.582337084557461e-08,
+    "status": "REJECTED",
+    "null_run_id": "baseline_null",
+    "floor_ok": true
+  },
+  "provenance": {
+    "code_version": "0.3.0",
+    "config_path": "configs/publication_all.json",
+    "config_sha256": "e2e60e267b07130e147f16158826a842cdb05094710a265f936afd297ef98eaf",
+    "seed_hash": "12379021e55fe033bdabb2114b32336465ed35c9efbb0ba3cc718b0dc94bf586",
+    "numpy_version": "2.4.4",
+    "scipy_version": "1.17.1",
+    "python_version": "3.12.3",
+    "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+    "wall_time_s": 27.292025804519653,
+    "created_at": "2026-07-23T04:45:02.073391+00:00",
+    "overlap_records": [
+      {
+        "n": 1,
+        "c_proj_removed": 3.442131721859662e-22,
+        "cdot_proj_removed": 1.5075623425513923e-22
+      },
+      {
+        "n": 2,
+        "c_proj_removed": -9.800851361746395e-06,
+        "cdot_proj_removed": -5.89965371759261e-07
+      }
+    ],
+    "carrier_guards": {
+      "k_edge": 1.85,
+      "v_g_edge": 0.8797065135761271,
+      "clearance_path_L": 130.0,
+      "t_end_required": 221.66483593181366
+    },
+    "field_r_stride": 4,
+    "field_n_snapshots_written": 80,
+    "field_N_r": 501,
+    "field_dtype": "float32"
+  }
+}
